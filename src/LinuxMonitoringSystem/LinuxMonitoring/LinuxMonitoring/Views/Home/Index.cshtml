@@ -1,0 +1,122 @@
+﻿@{
+    var systemData = ViewData["SystemData"] as string;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Monitor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General body settings */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #2d3436;
+            color: #dfe6e9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Main container styling */
+        .container {
+            background-color: #1e272e;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            width: 85%;
+            max-width: 1200px;
+            padding: 40px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Title styling */
+        h1 {
+            text-align: center;
+            color: #ff6b6b;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* Output container */
+        .output-container {
+            background-color: #34495e;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            max-height: 400px;
+            overflow-y: auto;
+            color: #b2bec3;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Footer styling */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #b2bec3;
+            font-size: 16px;
+            padding-top: 20px;
+            border-top: 1px solid #4f5b62;
+        }
+
+        /* Styling for preformatted text */
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+        }
+
+        /* Button styling (for refresh functionality) */
+        .btn-refresh {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px auto 0;
+            display: block;
+            text-align: center;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-refresh:hover {
+            background-color: #e74c3c;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>System Monitor</h1>
+
+        <!-- Displaying output data -->
+        <div class="output-container">
+            <pre>@systemData</pre>
+        </div>
+
+        <!-- Refresh Button -->
+        <a href="#" class="btn-refresh" onclick="location.reload();">Refresh Data</a>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>A simple system monitoring project using ASP.NET Core MVC</p>
+        </div>
+    </div>
+</body>
+</html>

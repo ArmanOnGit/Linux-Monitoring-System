@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "JTbV9g6ELeo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Ata\\source\\repos\\git\\src\\LinuxMonitoringSystem\\LinuxMonitoring\\LinuxMonitoring\\LinuxMonitoring.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Ata\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512"
+  ],
+  "logs": []
+}
