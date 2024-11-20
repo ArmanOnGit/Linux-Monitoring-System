@@ -1,0 +1,74 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ata\\source\\repos\\git\\src\\LinuxMonitoringSystem\\LinuxMonitoring\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|c:\\users\\ata\\source\\repos\\git\\src\\linuxmonitoringsystem\\linuxmonitoring\\linuxmonitoring\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|solutionrelative:linuxmonitoring\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|c:\\users\\ata\\source\\repos\\git\\src\\linuxmonitoringsystem\\linuxmonitoring\\linuxmonitoring\\services\\systemmonitorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|solutionrelative:linuxmonitoring\\services\\systemmonitorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|c:\\users\\ata\\source\\repos\\git\\src\\linuxmonitoringsystem\\linuxmonitoring\\linuxmonitoring\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|solutionrelative:linuxmonitoring\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ata\\source\\repos\\git\\src\\LinuxMonitoringSystem\\LinuxMonitoring\\LinuxMonitoring\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "LinuxMonitoring\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Ata\\source\\repos\\git\\src\\LinuxMonitoringSystem\\LinuxMonitoring\\LinuxMonitoring\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "LinuxMonitoring\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-20T15:20:07.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SystemMonitorService.cs",
+              "DocumentMoniker": "C:\\Users\\Ata\\source\\repos\\git\\src\\LinuxMonitoringSystem\\LinuxMonitoring\\LinuxMonitoring\\Services\\SystemMonitorService.cs",
+              "RelativeDocumentMoniker": "LinuxMonitoring\\Services\\SystemMonitorService.cs",
+              "ToolTip": "C:\\Users\\Ata\\source\\repos\\git\\src\\LinuxMonitoringSystem\\LinuxMonitoring\\LinuxMonitoring\\Services\\SystemMonitorService.cs",
+              "RelativeToolTip": "LinuxMonitoring\\Services\\SystemMonitorService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T15:19:49.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Ata\\source\\repos\\git\\src\\LinuxMonitoringSystem\\LinuxMonitoring\\LinuxMonitoring\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "LinuxMonitoring\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Ata\\source\\repos\\git\\src\\LinuxMonitoringSystem\\LinuxMonitoring\\LinuxMonitoring\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "LinuxMonitoring\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T15:18:35.832Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
