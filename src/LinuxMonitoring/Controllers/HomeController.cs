@@ -11,7 +11,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var output = _monitorService.RunBashScript("/src/scripts/cpuFreePercentage.sh");
+        var output = _monitorService.RunBashScript("/app/scripts/cpuFreePercentage.sh");
         ViewData["SystemData"] = output;
         return View();
     }
