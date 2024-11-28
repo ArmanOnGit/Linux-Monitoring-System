@@ -1,4 +1,5 @@
 #!/bin/bash
 
-mpstat |awk 'NR==4 {print $13}'
+output=$(mpstat |awk 'NR==4 {print $12}')
 
+echo "Your CPU free percentage is $output %"
