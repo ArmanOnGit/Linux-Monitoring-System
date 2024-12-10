@@ -1,122 +1,137 @@
 ﻿@{
     var systemData = ViewData["SystemData"] as string;
 }
-
+@{
+    Layout =
+        "~/Views/Shared/_Layout.cshtml";
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Monitor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Data Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
-        /* General body settings */
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #2d3436;
-            color: #dfe6e9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        /* Main container styling */
-        .container {
-            background-color: #1e272e;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            width: 85%;
-            max-width: 1200px;
-            padding: 40px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .container:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Title styling */
-        h1 {
-            text-align: center;
-            color: #ff6b6b;
-            font-size: 36px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        /* Output container */
-        .output-container {
-            background-color: #34495e;
+        /* Dark theme for panel */
+        .custom-panel {
+            background: linear-gradient(145deg, #000000, #1a1a2e);
+            color: #e0e0e0;
+            border: 1px solid #030821;
+            padding: 20px;
             border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            max-height: 400px;
-            overflow-y: auto;
-            color: #b2bec3;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-            line-height: 1.6;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 250px;
+            margin: 10px;
+            height: auto;
         }
 
-        /* Footer styling */
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #b2bec3;
-            font-size: 16px;
-            padding-top: 20px;
-            border-top: 1px solid #4f5b62;
-        }
+            /* Hover effect for panel */
+            .custom-panel:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
+            }
 
-        /* Styling for preformatted text */
-        pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            font-family: 'Courier New', monospace;
-            margin: 0;
-        }
+            /* Panel heading */
+            .custom-panel h5 {
+                color: #00d4ff;
+                font-weight: 700;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
 
-        /* Button styling (for refresh functionality) */
+        /* Refresh button styling */
         .btn-refresh {
             display: inline-block;
-            background-color: #ff6b6b;
-            color: white;
+            padding: 10px 10px;
             font-size: 16px;
-            padding: 10px 20px;
+            font-weight: bold;
+            color: #fff;
+            background: #0077b6;
+            border: 1px solid #fff;
+            border-radius: 25px;
             text-decoration: none;
-            border-radius: 5px;
-            margin: 20px auto 0;
-            display: block;
             text-align: center;
-            transition: all 0.2s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            max-width: 40px;
+            margin-left: auto;
         }
 
-        .btn-refresh:hover {
-            background-color: #e74c3c;
+            .btn-refresh:hover {
+                background-color: #005f8c;
+                transform: scale(1.05);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            }
+
+        /* List styling */
+        .custom-panel ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
+        .custom-panel ul li {
+             padding: 10px;
+             display: flex;
+             align-items: center;
+             border-radius: 12px;
+             box-shadow: 0 2px 8px rgba(0, 0, 0, 2);
+             overflow-y: auto;
+             color: #b2bec3;
+             font-family: "Courier New", monospace;
+             font-size: 12px;
+             line-height: 1.6;
+             background-color: #34495e;
+             margin-top: 8px;
+        }
+
+        .custom-panel ul li:last-child {
+             border-bottom: none;
+        }
+
+        .custom-panel ul li i {
+             color: #00d4ff;
+        }
+
+        /* Background styling */
+        body {
+            background: #2d3436;
+        }
+
+        .title-space {
+            margin-top: 35px;
+            margin-bottom: 9px;
+        }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>System Monitor</h1>
-
-        <!-- Displaying output data -->
-        <div class="output-container">
-            <pre>@systemData</pre>
-        </div>
-
-        <!-- Refresh Button -->
-        <a href="#" class="btn-refresh" onclick="location.reload();">Refresh Data</a>
-
-        <!-- Footer -->
-        <div class="footer">
-            <p>A simple system monitoring project using ASP.NET Core MVC</p>
+<body class="bg-dark text-light">
+    <div class="container-fluid p-3">
+        <div class="row">
+            <!-- Enhanced Top Left Panel -->
+            <div class="col-lg-3 col-md-4 col-sm-12 custom-panel">
+                <h5 class="title"><i class="fas fa-database"></i> CPU</h5>
+                <div class="title-space">
+                    <ul>
+                        <li>@systemData</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn-refresh mt-3" onclick="location.reload();">
+                    <i class="fas fa-sync-alt"></i>
+                </a>
+            </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </body>
 </html>
