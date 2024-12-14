@@ -1,5 +1,6 @@
 ﻿@{
-    var systemData = ViewData["SystemData"] as string;
+    var Cpu = ViewData["CpuData"] as string;
+    var CpuDetail = ViewData["CpuDetailData"] as Array;
 }
 @{
     Layout =
@@ -25,7 +26,7 @@
             border-radius: 12px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
             transition: transform 0.3s, box-shadow 0.3s;
-            max-width: 250px;
+            max-width: auto;
             margin: 10px;
             height: auto;
         }
@@ -121,8 +122,16 @@
                 <h5 class="title"><i class="fas fa-database"></i> CPU</h5>
                 <div class="title-space">
                     <ul>
-                        <li>@systemData</li>
+                        <li>@Cpu</li>
+                        <br>
+                        <br>
+                        @foreach (string Detail in CpuDetail) {
+                             <li> @Detail </li>
+                        }
+                        
+
                     </ul>
+                    
                 </div>
                 <a href="#" class="btn-refresh mt-3" onclick="location.reload();">
                     <i class="fas fa-sync-alt"></i>

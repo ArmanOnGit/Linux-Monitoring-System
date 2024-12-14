@@ -2,7 +2,7 @@
 
 public class SystemMonitorService
 {
-    public string RunBashScript(string scriptPath)
+    public string RunCpu(string scriptPath)
     {
         var process = new Process();
         process.StartInfo.FileName = "/bin/bash";
@@ -10,12 +10,24 @@ public class SystemMonitorService
         process.StartInfo.RedirectStandardOutput = true;
         process.StartInfo.UseShellExecute = false;
         process.StartInfo.CreateNoWindow = true;
-
         process.Start();
-
-        string output = process.StandardOutput.ReadToEnd();
+        string Cpu = process.StandardOutput.ReadToEnd();
         process.WaitForExit();
 
-        return output;
+        return Cpu;
+    }
+    public string RunCpuDetail(string scriptPath)
+    {
+        var process = new Process();
+        process.StartInfo.FileName = "/bin/bash";
+        process.StartInfo.Arguments = scriptPath;
+        process.StartInfo.RedirectStandardOutput = true;
+        process.StartInfo.UseShellExecute = false;
+        process.StartInfo.CreateNoWindow = true;
+        process.Start();
+        string CpuDetail = process.StandardOutput.ReadToEnd();
+        process.WaitForExit();
+
+        return CpuDetail;
     }
 }

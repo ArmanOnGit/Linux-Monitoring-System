@@ -22,13 +22,12 @@ WORKDIR /app
 COPY ./scripts/ ./scripts/
 
 #Install dotnet dependencies
-RUN apt-get update
-RUN apt-get install zlib1g
+RUN apt-get update && apt-get install zlib1g
 RUN apt-get install -y aspnetcore-runtime-8.0
 RUN apt-get install -y dotnet-runtime-8.0
 
 # Install scripts dependencies
-RUN DEBIAN_FRONTEND="noninteractive" TZ="America/New_York" && apt-get install -y sysstat && apt-get install nano
+RUN DEBIAN_FRONTEND="noninteractive" TZ="America/New_York" && apt-get install -y sysstat && apt-get install bc
 
 # Copy the build output from the first stage
 COPY --from=build /app/build /app
