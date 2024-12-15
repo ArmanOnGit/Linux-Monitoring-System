@@ -11,8 +11,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var Cpu = _monitorService.RunCpu("/app/scripts/CPU.sh");
-        var CpuDetail = _monitorService.RunCpuDetail("/app/scripts/CpuDetail.sh");
+        var Cpu = _monitorService.RunScript("/app/scripts/CPU.sh");
+        var CpuDetail = _monitorService.RunScript("/app/scripts/CpuDetail.sh");
         string [] CpuD = CpuDetail.Split('-');
         ViewData["CpuData"] = Cpu;
         ViewData["CpuDetailData"] = CpuD;

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+    
 # Loop through all CPU cores to get their frequencies
 i=0
 for cpu in /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq; do
