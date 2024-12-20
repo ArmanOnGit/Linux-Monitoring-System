@@ -13,4 +13,4 @@ Per=$(($usedSwap*100/$totalSwap))
 
 #----------
 # Final Result
-echo "$usedSwap of $totalSwap - $Per%"
+echo "Swap usage: $usedSwap of $totalSwap - $Per%"

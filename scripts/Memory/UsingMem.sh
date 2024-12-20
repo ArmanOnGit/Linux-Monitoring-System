@@ -32,4 +32,4 @@ Per=$(($usedMem*100/$totalMem))
 
 #----------
 # Final Result
-echo "$usedMem_H of $totalMem_H - $Per%"
+echo "Memory usage: $usedMem_H of $totalMem_H - $Per%"
