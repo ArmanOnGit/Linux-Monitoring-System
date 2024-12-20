@@ -16,7 +16,8 @@ public class HomeController : Controller
         string [] CpuD = CpuDetail.Split('-');
         ViewData["CpuData"] = Cpu;
         ViewData["CpuDetailData"] = CpuD;
-
+        var Mem =_monitorService.RunScript("/app/scripts/Memory/UsingMem.sh");
+        ViewData["MemData"] = Mem;
         return View();
     }
 }

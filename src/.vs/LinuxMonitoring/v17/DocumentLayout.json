@@ -11,20 +11,8 @@
       "RelativeMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|solutionrelative:linuxmonitoring\\services\\systemmonitorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|c:\\users\\ata\\source\\repos\\linuxmonitoringsystem\\src\\linuxmonitoring\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|solutionrelative:linuxmonitoring\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|c:\\users\\ata\\source\\repos\\linuxmonitoringsystem\\src\\linuxmonitoring\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|solutionrelative:linuxmonitoring\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|c:\\users\\ata\\source\\repos\\linuxmonitoringsystem\\src\\linuxmonitoring\\linuxmonitoring.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|solutionrelative:linuxmonitoring\\linuxmonitoring.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|c:\\users\\ata\\source\\repos\\linuxmonitoringsystem\\src\\linuxmonitoring\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D8C0BD1C-C5EA-405A-8194-54DA7515D3F8}|LinuxMonitoring\\LinuxMonitoring.csproj|solutionrelative:linuxmonitoring\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,54 +22,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Ata\\source\\repos\\LinuxMonitoringSystem\\src\\LinuxMonitoring\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "LinuxMonitoring\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Ata\\source\\repos\\LinuxMonitoringSystem\\src\\LinuxMonitoring\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "LinuxMonitoring\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-09T17:25:34.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LinuxMonitoring",
-              "DocumentMoniker": "C:\\Users\\Ata\\source\\repos\\LinuxMonitoringSystem\\src\\LinuxMonitoring\\LinuxMonitoring.csproj",
-              "RelativeDocumentMoniker": "LinuxMonitoring\\LinuxMonitoring.csproj",
-              "ToolTip": "C:\\Users\\Ata\\source\\repos\\LinuxMonitoringSystem\\src\\LinuxMonitoring\\LinuxMonitoring.csproj",
-              "RelativeToolTip": "LinuxMonitoring\\LinuxMonitoring.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-09T15:30:00.848Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Ata\\source\\repos\\LinuxMonitoringSystem\\src\\LinuxMonitoring\\Program.cs",
-              "RelativeDocumentMoniker": "LinuxMonitoring\\Program.cs",
-              "ToolTip": "C:\\Users\\Ata\\source\\repos\\LinuxMonitoringSystem\\src\\LinuxMonitoring\\Program.cs",
-              "RelativeToolTip": "LinuxMonitoring\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T06:57:07.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Ata\\source\\repos\\LinuxMonitoringSystem\\src\\LinuxMonitoring\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "LinuxMonitoring\\Views\\Home\\Index.cshtml",
@@ -89,8 +42,7 @@
               "RelativeToolTip": "LinuxMonitoring\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAGIAAAAAAAAAAAAiwG4AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-20T15:20:07.546Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T15:20:07.546Z"
             },
             {
               "$type": "Document",
@@ -102,8 +54,7 @@
               "RelativeToolTip": "LinuxMonitoring\\Services\\SystemMonitorService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-20T15:19:49.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-20T15:19:49.792Z"
             },
             {
               "$type": "Document",
@@ -113,10 +64,14 @@
               "RelativeDocumentMoniker": "LinuxMonitoring\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Ata\\source\\repos\\LinuxMonitoringSystem\\src\\LinuxMonitoring\\Controllers\\HomeController.cs",
               "RelativeToolTip": "LinuxMonitoring\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwA8AAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T15:18:35.832Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             }
           ]
         }
