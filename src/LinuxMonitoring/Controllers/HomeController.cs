@@ -18,6 +18,10 @@ public class HomeController : Controller
         ViewData["CpuDetailData"] = CpuD;
         var Mem =_monitorService.RunScript("/app/scripts/Memory/UsingMem.sh");
         ViewData["MemoryData"] = Mem;
+        var CachedMem = _monitorService.RunScript("/app/scripts/Memory/CachedMem.sh");
+        ViewData["CacheData"] = CachedMem;
+        var SwapMem = _monitorService.RunScript("/app/scripts/Memory/SwapMem.sh");
+        ViewData["SwapData"] = SwapMem;
         return View();
     }
 }
