@@ -17,7 +17,7 @@ public class HomeController : Controller
         ViewData["CpuData"] = Cpu;
         ViewData["CpuDetailData"] = CpuD;
         var Mem =_monitorService.RunScript("/app/scripts/Memory/UsingMem.sh");
-        ViewData["MemData"] = Mem;
+        ViewData["MemoryData"] = Mem;
         return View();
     }
 }
