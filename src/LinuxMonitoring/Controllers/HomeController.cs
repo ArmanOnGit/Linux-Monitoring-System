@@ -22,6 +22,8 @@ public class HomeController : Controller
         ViewData["CacheData"] = CachedMem;
         var SwapMem = _monitorService.RunScript("/app/scripts/Memory/SwapMem.sh");
         ViewData["SwapData"] = SwapMem;
+        var disk = _monitorService.RunScript("/app/scripts/Disk/wholeDisk.sh");
+        ViewData["DiskData"] = disk;
         return View();
     }
 }

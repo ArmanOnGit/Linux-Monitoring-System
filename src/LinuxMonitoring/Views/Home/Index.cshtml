@@ -1,9 +1,10 @@
-﻿@{
+﻿﻿@{
     var Cpu = ViewData["CpuData"] as string;
     var CpuDetail = ViewData["CpuDetailData"] as Array;
     var MemData = ViewData["MemoryData"] as string;
     var CachedData= ViewData["CacheData"] as string;
     var SwapData = ViewData["SwapData"] as string;
+    var DiskData = ViewData["DiskData"] as string;
 }
 @{
     Layout =
@@ -151,6 +152,32 @@
                             <li>@CachedData</li>
                             <li>@SwapData</li>
                         </ul>
+                    </div>
+                    <a href="#" class="btn-refresh mt-3" onclick="location.reload();">
+                        <i class="fas fa-sync-alt"></i>
+                    </a>
+                </div>
+                <div class="custom-panel">
+                    <h5 class="title"><i class="fas fa-database"></i> DISK</h5>
+                    <div class="title-space">
+                        @{
+                            string[] DiskD = DiskData.Split("*");
+                            <ul>
+                                <li>@DiskD[0]</li>
+                                <br>
+                                <br>
+                                @{
+                                    string idk = DiskD[1];
+                                    string[] details = idk.Split("|-");
+					                <li>
+                                        @foreach (string item in details)
+                                        {
+                                            @item
+                                        }
+                                    </li>
+                                }
+                            </ul>
+                        }
                     </div>
                     <a href="#" class="btn-refresh mt-3" onclick="location.reload();">
                         <i class="fas fa-sync-alt"></i>
