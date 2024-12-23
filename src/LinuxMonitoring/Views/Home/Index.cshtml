@@ -168,11 +168,16 @@
                                 <br>
                                 @{
                                     string idk = DiskD[1];
-                                    string[] details = idk.Split("|-");
+                                    string[] details2 = idk.Split("|-");
+                                    string index0 = details2[0];
+                                    details2[0] = " ";
 					                <li>
-                                        @foreach (string item in details)
+                                        @index0
+                                        <br>
+                                        @foreach (string item2 in details2)
                                         {
-                                            @item
+                                            @item2
+                                            <br>
                                         }
                                     </li>
                                 }

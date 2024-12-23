@@ -9,7 +9,7 @@ function nvmeDisks()
         for item in $diskPartitions; do
             lsblk -o TYPE,NAME,SIZE | grep disk | head -n $i
             echo "*"
-            lsblk -o NAME,TYPE,SIZE,MOUNTPOINT,FSAVAIL | grep $item | grep part | sed 's/part//g' | sed 's/├─//g' | sed 's/└─//g' | sed 's/`-/|-/g' | sed 's/\//|-\//'
+            lsblk -o NAME,TYPE,SIZE,MOUNTPOINT,FSAVAIL | grep $item | grep part | sed 's/part//g' | sed 's/ ^t^| ^t^`//g' | sed 's/ ^t^t ^t^`//g' | sed 's/`-/|-/g' | sed 's/\//|-\//'
             echo
             i+=1
         done
@@ -17,4 +17,4 @@ function nvmeDisks()
 
 }
 
-nvmeDisks
+nvmeDisks | sed 's/disk/Disk:  /' | sed 's/^\*$/*\nPartitions:\n/'
