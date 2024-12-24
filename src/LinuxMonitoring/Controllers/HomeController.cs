@@ -24,6 +24,8 @@ public class HomeController : Controller
         ViewData["SwapData"] = SwapMem;
         var disk = _monitorService.RunScript("/app/scripts/Disk/wholeDisk.sh");
         ViewData["DiskData"] = disk;
+        var Network = _monitorService.RunScript("/app/scripts/Network/network_monitor.sh");
+        ViewData["NetworkData"] = Network;
         return View();
     }
 }

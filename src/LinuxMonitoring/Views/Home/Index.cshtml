@@ -5,6 +5,7 @@
     var CachedData= ViewData["CacheData"] as string;
     var SwapData = ViewData["SwapData"] as string;
     var DiskData = ViewData["DiskData"] as string;
+    var Network = ViewData["NetworkData"] as string;
 }
 @{
     Layout =
@@ -188,6 +189,18 @@
                         <i class="fas fa-sync-alt"></i>
                     </a>
                 </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12 custom-panel">
+                <h5 class="title"><i class="fas fa-database"></i> Network</h5>
+                <div class="title-space">
+                    <ul>
+                        <li>@Network</li>                        
+                    </ul>
+
+                </div>
+                <a href="#" class="btn-refresh mt-3" onclick="location.reload();">
+                    <i class="fas fa-sync-alt"></i>
+                </a>
             </div>
 
         </div>
