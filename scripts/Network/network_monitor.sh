@@ -8,7 +8,7 @@ echo ""
 for item in $INTERFACES; do
 
     INTERFACE=${item}
-    echo $INTERFACE
+    echo "*$INTERFACE : "
     RX_BEFORE=$(cat /sys/class/net/$INTERFACE/statistics/rx_bytes)
     TX_BEFORE=$(cat /sys/class/net/$INTERFACE/statistics/tx_bytes)
     sleep 1
@@ -21,4 +21,3 @@ for item in $INTERFACES; do
     echo "Download: ${RX_RATE} KB/s | Upload: ${TX_RATE} KB/s"
     echo " "
 done
-

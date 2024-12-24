@@ -25,7 +25,8 @@ public class HomeController : Controller
         var disk = _monitorService.RunScript("/app/scripts/Disk/wholeDisk.sh");
         ViewData["DiskData"] = disk;
         var Network = _monitorService.RunScript("/app/scripts/Network/network_monitor.sh");
-        ViewData["NetworkData"] = Network;
+        string [] NetworkD = Network.Split('*');
+        ViewData["NetworkData"] = NetworkD;
         return View();
     }
 }

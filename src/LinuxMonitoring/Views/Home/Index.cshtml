@@ -5,7 +5,7 @@
     var CachedData= ViewData["CacheData"] as string;
     var SwapData = ViewData["SwapData"] as string;
     var DiskData = ViewData["DiskData"] as string;
-    var Network = ViewData["NetworkData"] as string;
+    var Network = ViewData["NetworkData"] as Array;
 }
 @{
     Layout =
@@ -158,7 +158,7 @@
                         <i class="fas fa-sync-alt"></i>
                     </a>
                 </div>
-                <div class="custom-panel">
+                <div class="custom-panel mt-3">
                     <h5 class="title"><i class="fas fa-database"></i> DISK</h5>
                     <div class="title-space">
                         @{
@@ -194,7 +194,16 @@
                 <h5 class="title"><i class="fas fa-database"></i> Network</h5>
                 <div class="title-space">
                     <ul>
-                        <li>@Network</li>                        
+                        @{
+                            int counter = 0;
+                            @foreach (string interfaces in Network)
+                            {
+                                if (counter!=0){
+                                    <li>@interfaces</li>
+                                }
+                                counter++;
+                            }
+                        }
                     </ul>
 
                 </div>
