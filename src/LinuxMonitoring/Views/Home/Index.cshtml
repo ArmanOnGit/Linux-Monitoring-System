@@ -124,7 +124,8 @@
     <div class="container-fluid p-3">
         <div class="row">
             <!-- Enhanced Top Left Panel -->
-            <div class="col-lg-3 col-md-4 col-sm-12 custom-panel">
+            <div class="col-lg-3 col-md-4 col-sm-12 ">
+                <div class="custom-panel">
                 <h5 class="title"><i class="fas fa-database"></i> CPU</h5>
                 <div class="title-space">
                     <ul>
@@ -157,6 +158,7 @@
                     <a href="#" class="btn-refresh mt-3" onclick="location.reload();">
                         <i class="fas fa-sync-alt"></i>
                     </a>
+                    </div>
                 </div>
                 <div class="custom-panel mt-3">
                     <h5 class="title"><i class="fas fa-database"></i> DISK</h5>
@@ -168,8 +170,8 @@
                                 <br>
                                 <br>
                                 @{
-                                    string idk = DiskD[1];
-                                    string[] details2 = idk.Split("|-");
+                                    string DiskDetails = DiskD[1];
+                                    string[] details2 = DiskDetails.Split("|-");
                                     string index0 = details2[0];
                                     details2[0] = " ";
 					                <li>
@@ -190,7 +192,8 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-12 custom-panel">
+            <div class="col-lg-3 col-md-4 col-sm-12 ">
+                <div class="custom-panel">
                 <h5 class="title"><i class="fas fa-database"></i> Network</h5>
                 <div class="title-space">
                     <ul>
@@ -210,6 +213,7 @@
                 <a href="#" class="btn-refresh mt-3" onclick="location.reload();">
                     <i class="fas fa-sync-alt"></i>
                 </a>
+                </div>
             </div>
 
         </div>
