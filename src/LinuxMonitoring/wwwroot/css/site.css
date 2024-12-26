@@ -21,6 +21,7 @@ body {
     margin-bottom: 60px;
     background: #2d3436;
 }
+
 html {
     font-size: 14px;
 }
@@ -31,6 +32,10 @@ html {
     }
 }
 
+.main {
+    display: flex;
+    flex-direction: row;
+}
 .custom-panel {
     background: linear-gradient(145deg, #000000, #1a1a2e);
     color: #e0e0e0;

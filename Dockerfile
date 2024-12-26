@@ -38,4 +38,3 @@ ENTRYPOINT ["dotnet", "LinuxMonitoring.dll"]
 
 # Expose the application port
 EXPOSE 5130
-
