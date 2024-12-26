@@ -20,6 +20,7 @@ FROM ubuntu:latest AS runtime
 # Set the working directory and set entry point
 WORKDIR /app
 COPY ./scripts/ ./scripts/
+COPY ./src/LinuxMonitoring/wwwroot /app/wwwroot
 
 #Install dotnet dependencies
 RUN apt-get update && apt-get install zlib1g
