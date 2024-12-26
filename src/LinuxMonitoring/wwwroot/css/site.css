@@ -18,5 +18,155 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background: #2d3436;
+}
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.custom-panel {
+    background: linear-gradient(145deg, #000000, #1a1a2e);
+    color: #e0e0e0;
+    border: 1px solid #030821;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 100%;
+    height: fit-content;
+}
+
+
+    /* Hover effect for panel */
+    .custom-panel:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Panel heading */
+    .custom-panel h5 {
+        color: #00d4ff;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+/* Refresh button styling */
+.btn-refresh {
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: #0077b6;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    max-width: 40px;
+    margin-left: auto;
+}
+
+    .btn-refresh:hover {
+        background-color: #005f8c;
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+/* List styling */
+.custom-panel ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .custom-panel ul li {
+        padding: 10px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 2);
+        overflow-y: auto;
+        color: #b2bec3;
+        font-family: "Courier New", monospace;
+        font-size: 12px;
+        line-height: 1.6;
+        background-color: #34495e;
+        margin-top: 8px;
+    }
+
+.DiskPanel {
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 2);
+    color: #b2bec3;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    background-color: #34495e;
+    margin-top: 8px;
+    overflow-y: auto;
+    height: 90px;
+}
+
+.custom-panel ul li:last-child {
+    border-bottom: none;
+}
+
+.custom-panel ul li i {
+    color: #00d4ff;
+}
+
+/* Background styling */
+body {
+    background: #2d3436;
+}
+
+.title-space {
+    margin-top: 35px;
+    margin-bottom: 9px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #666;
+    }
+
+::-webkit-scrollbar:active {
+    background: #333;
 }
