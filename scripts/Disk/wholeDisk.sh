@@ -17,4 +17,4 @@ function nvmeDisks()
 
 }
 
-nvmeDisks | sed 's/disk/Disk:  /' | sed 's/^\*$/*\nPartitions:\n/'
+nvmeDisks
