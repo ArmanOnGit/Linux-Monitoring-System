@@ -133,7 +133,21 @@ html {
     overflow-y: auto;
     height: 90px;
 }
-
+.GeneralPanel {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 2);
+    overflow-x: hidden;
+    color: #b2bec3;
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    background-color: #34495e;
+    margin-top: 8px;
+}
 .custom-panel ul li:last-child {
     border-bottom: none;
 }
