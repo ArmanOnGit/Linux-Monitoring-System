@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LinuxMonitoring")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a789fddaa55692f95955dc81ac6edc5ec8bb3350")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ba034f85ba142a843e2cbd8f022392d33d59839")]
 [assembly: System.Reflection.AssemblyProductAttribute("LinuxMonitoring")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LinuxMonitoring")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
