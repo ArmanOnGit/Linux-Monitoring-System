@@ -1,4 +1,5 @@
 #!/bin/bash
+# We use "&" to split the output on the site
 
 echo "Number of Running Processes: "
 ps -e --no-headers | wc -l
