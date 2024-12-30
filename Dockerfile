@@ -1,4 +1,5 @@
-# Run a dotnet image to build the project
+
+# Stage 1: Build the application
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
@@ -7,34 +8,37 @@ WORKDIR /src
 COPY ["src/LinuxMonitoring/LinuxMonitoring.csproj", "LinuxMonitoring/"]
 RUN dotnet restore "./LinuxMonitoring/LinuxMonitoring.csproj"
 
-# Copy the entire source code and scripts directory
+# Copy the entire source code
 COPY ./src/ .
 
-# Set the working directory to the project and build the application
+# Build the application
 WORKDIR "/src/LinuxMonitoring"
 RUN dotnet build "LinuxMonitoring.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-#ٔ Run Ubuntu image to run the project
+
+
+# Stage 2: Runtime environment
 FROM ubuntu:latest AS runtime
 
-# Set the working directory and set entry point
+# Set timezone and prevent interactive prompts
+ENV TZ=Asia/Tehran
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
+    && apt-get update && apt-get install -y --no-install-recommends \
+    zlib1g aspnetcore-runtime-8.0 dotnet-runtime-8.0 sysstat bc \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
 WORKDIR /app
+
+# Copy scripts and static files
 COPY ./scripts/ ./scripts/
 COPY ./src/LinuxMonitoring/wwwroot /app/wwwroot
 
-#Install dotnet dependencies
-RUN apt-get update && apt-get install zlib1g
-RUN apt-get install -y aspnetcore-runtime-8.0
-RUN apt-get install -y dotnet-runtime-8.0
-
-# Install scripts dependencies
-RUN DEBIAN_FRONTEND="noninteractive" TZ="America/New_York" && apt-get install -y sysstat && apt-get install bc
-
-# Copy the build output from the first stage
+# Copy build output from build stage
 COPY --from=build /app/build /app
-
-# Run the project
-ENTRYPOINT ["dotnet", "LinuxMonitoring.dll"]
 
 # Expose the application port
 EXPOSE 5130
+
+# Run the application
+ENTRYPOINT ["dotnet", "LinuxMonitoring.dll"]

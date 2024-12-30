@@ -12,4 +12,4 @@ date | awk '{print $4 " "}'
 echo "&"
 
 echo -e "\nTimezone:"
-cat /etc/timezone | sed 's/\///g'
+cat /etc/timezone
