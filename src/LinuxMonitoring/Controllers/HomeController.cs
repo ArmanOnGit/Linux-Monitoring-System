@@ -27,6 +27,15 @@ public class HomeController : Controller
         var Network = _monitorService.RunScript("/app/scripts/Network/network_monitor.sh");
         string [] NetworkD = Network.Split('*');
         ViewData["NetworkData"] = NetworkD;
+        var Sysinfo = _monitorService.RunScript("/app/scripts/General/SystemInfo.sh");
+        string [] SysinfoD = Sysinfo.Split('&');
+        ViewData["Sysinfo"] = SysinfoD;
+        var Uptime = _monitorService.RunScript("/app/scripts/General/Uptime.sh");
+        string[] SystemUptimeD = Uptime.Split("&");
+        ViewData["Uptime"] = SystemUptimeD;
+        var SystemTime = _monitorService.RunScript("/app/scripts/General/Time.sh");
+        string [] SystemTimeD = SystemTime.Split('&');
+        ViewData["SystemTime"] = SystemTimeD;
         return View();
     }
 }

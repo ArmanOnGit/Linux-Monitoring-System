@@ -6,6 +6,9 @@
     var SwapData = ViewData["SwapData"] as string;
     var DiskData = ViewData["DiskData"] as string;
     var Network = ViewData["NetworkData"] as Array;
+    var SystemData = ViewData["Sysinfo"] as Array;
+    var SystemTime = ViewData["SystemTime"] as Array;
+    var SystemUptime = ViewData["Uptime"] as Array;
 }
 @{
     Layout =
@@ -23,34 +26,94 @@
     <link rel="stylesheet" href="../../wwwroot/css/site.css" />
 </head>
 <body class="bg-dark text-light">
-    <div class="container-fluid">
+    <div class="container-fluid pt-3">
         <!-- Main Row -->
         <div class="row">
-            <!-- Left Div -->
-            <div class="col-md-3">
-                <div class="custom-panel">
-                    <h5 class="title"><i class="fas fa-database"></i> CPU</h5>
-                    <div class="title-space">
-                        <ul>
-                            <li>@Cpu</li>
-                            <br />
-                            <br />
-                            @foreach (string Detail in CpuDetail)
-                            {
-                                <li> @Detail </li>
-                            }
-                        </ul>
-                    </div>
-                    <a href="#" class="btn-refresh mt-3" onclick="location.reload();">
-                        <i class="fas fa-sync-alt"></i>
-                    </a>
-                </div>
-            </div>
 
-            <!-- Right Div -->
+        <!-- Left Div -->
             <div class="col-md-9">
+
                 <!-- First Row in Right Div -->
-                <div class="row mb-3">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Row 1 -->
+                        <div class="col-md-4">
+                            <div class="custom-panel">
+                                <h5 class="title"><i class="fas fa-database"></i>System Information</h5>
+                                <div class="title-space">
+                                    <ul>
+                                        @{
+                                            int i = 0;
+                                            foreach (string sdata in SystemData) {
+                                                <li>@sdata</li>
+                                                if (i==0){
+                                                    <br>
+                                                    <br>
+                                                }
+                                                i++;
+                                            }
+                                        }
+                                    </ul>
+                                </div>
+                                <a href="#" class="btn-refresh mt-3" onclick="location.reload();">
+                                    <i class="fas fa-sync-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Row 2 -->
+                        <div class="col-md-4">
+                            <div class="custom-panel">
+                                <h5 class="title"><i class="fas fa-database"></i>System Time</h5>
+                                <div class="title-space">
+                                    <ul>
+                                        @{
+                                            i = 0;
+                                            foreach (string time in SystemTime) {
+                                                <li>@time</li>
+                                                if (i==0){
+                                                    <br>
+                                                    <br>
+                                                }
+                                                i++;
+                                            }
+                                        }
+                                    </ul>
+                                </div>
+                                <a href="#" class="btn-refresh mt-3" onclick="location.reload();">
+                                    <i class="fas fa-sync-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Row 3 -->
+                        <div class="col-md-4">
+                            <div class="custom-panel">
+                                <h5 class="title"><i class="fas fa-database"></i>System Activity</h5>
+                                <div class="title-space">
+                                        <ul>
+                                            @{
+                                                i = 0;
+                                                @foreach (string uptime in SystemUptime) 
+                                                {
+                                                    <li>@uptime</li>
+                                                    if (i==0){
+                                                        <br>
+                                                        <br>
+                                                    }
+                                                    i++;
+                                                }
+                                            }
+                                        </ul>
+                                </div>
+                                <a href="#" class="btn-refresh mt-3" onclick="location.reload();">
+                                    <i class="fas fa-sync-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Row in Right Div -->
+                <div class="row mt-4">
                     <div class="col-md-4">
                         <div class="custom-panel">
                             <h5 class="title"><i class="fas fa-database"></i> DISK</h5>
@@ -133,32 +196,29 @@
                     </div>
                 </div>
 
-                <!-- Second Row in Right Div -->
-                <div class="GeneralPanel container-fluid">
-                    <!-- Row 1 -->
-                    <div class="row">
-                        <h2>row</h2>
-                        <div class="col">
-                            <h1>Column 1</h1>
-                            <div>Column 2</div>
-                        </div>
+
+
+            </div>
+
+        <!-- Right Div -->
+            <div class="col-md-3">
+                <div class="custom-panel">
+                    <h5 class="title"><i class="fas fa-database"></i> CPU</h5>
+                    <div class="title-space">
+                        <ul class="CpuPanel">
+                            <li>@Cpu</li>
+                            <br/>
+                            <br/>
+                                @foreach (string Detail in CpuDetail)
+                                {
+                                   <li>@Detail</li>
+                                    <br>
+                                }
+                        </ul>
                     </div>
-                    <!-- Row 2 -->
-                    <div class="row">
-                        <h2>row</h2>
-                        <div class="col">
-                            <h1>Column 1</h1>
-                            <div>Column 2</div>
-                        </div>
-                    </div>
-                    <!-- Row 3 -->
-                    <div class="row">
-                        <h2>row</h2>
-                        <div class="col">
-                            <h1>Column 1</h1>
-                            <div>Column 2</div>
-                        </div>
-                    </div>
+                    <a href="#" class="btn-refresh mt-3" onclick="location.reload();">
+                        <i class="fas fa-sync-alt"></i>
+                    </a>
                 </div>
             </div>
         </div>

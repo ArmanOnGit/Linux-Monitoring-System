@@ -1,10 +1,14 @@
 #!/bin/bash
 
-echo -e "\nSystem Timezone:"
-timedatectl | grep "Time zone" | awk '{print $3, $4}'
+echo "System Date:"
+date | awk '{print $3 " " $2 " " $6}'
 
-echo "*"
+echo "&"
 
-echo "Current System Date and Time:"
-date
+echo "Current System Time:"
+date | awk '{print $4 " "}'
 
+echo "&"
+
+echo -e "\nTimezone:"
+cat /etc/timezone | sed 's/\///g'
