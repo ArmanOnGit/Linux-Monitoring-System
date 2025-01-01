@@ -64,6 +64,34 @@ public class HomeController : Controller
         }
     }
 
+
+    [HttpGet("Monitoring/GetSystemTime")]
+    public IActionResult GetSystemTime()
+    {
+        try
+        {
+            // Run the Time script and process the output
+            var systemTime = _monitorService.RunScript("/app/scripts/General/Time.sh");
+            string[] systemTimeDetails = systemTime.Split("&");
+            // Return the data as JSON
+            return Json(new
+            {
+                success = true,
+                systemTime = systemTimeDetails
+            });
+        }
+        catch (Exception ex)
+        {
+            // Return an error message if something goes wrong
+            return Json(new
+            {
+                success = false,
+                error = ex.Message
+            });
+        }
+    }
+
+
     [HttpGet("Monitoring/GetSystemUptime")]
     public IActionResult GetSystemUptime()
     {
