@@ -42,17 +42,7 @@
                                 <h5 class="title"><i class="fas fa-database"></i>System Information</h5>
                                 <div class="title-space">
                                     <ul id="systemInfoList">
-                                          @* @{
-                                              int i = 0;
-                                              foreach (string sdata in SystemData) {
-                                                  <li>@sdata</li>
-                                                  if (i==0){
-                                                      <br>
-                                                      <br>
-                                                  }
-                                                  i++;
-                                              }
-                                          } *@
+
                                     </ul>
                                 </div>
                                 <a href="#" class="btn-refresh" id="SysInfo-refresh">
@@ -65,21 +55,11 @@
                             <div class="custom-panel">
                                 <h5 class="title"><i class="fas fa-database"></i>System Time</h5>
                                 <div class="title-space">
-                                    <ul>
-                                        @{
-                                            int i = 0;
-                                            foreach (string time in SystemTime) {
-                                                <li>@time</li>
-                                                if (i==0){
-                                                    <br>
-                                                    <br>
-                                                }
-                                                i++;
-                                            }
-                                        }
+                                    <ul id="timeList">
+                                       
                                     </ul>
                                 </div>
-                                <a href="#" class="btn-refresh" onclick="location.reload();">
+                                <a href="#" class="btn-refresh" id="refreshTimeButton">
                                     <i class="fas fa-sync-alt"></i>
                                 </a>
                             </div>
@@ -89,22 +69,11 @@
                             <div class="custom-panel">
                                 <h5 class="title"><i class="fas fa-database"></i>System Activity</h5>
                                 <div class="title-space">
-                                        <ul>
-                                            @{
-                                                i = 0;
-                                                @foreach (string uptime in SystemUptime) 
-                                                {
-                                                    <li>@uptime</li>
-                                                    if (i==0){
-                                                        <br>
-                                                        <br>
-                                                    }
-                                                    i++;
-                                                }
-                                            }
-                                        </ul>
+                                    <ul id="uptimeList">
+                                            
+                                    </ul>
                                 </div>
-                                <a href="#" class="btn-refresh" onclick="location.reload();">
+                                <a href="#" class="btn-refresh" id="refreshUptimeButton">
                                     <i class="fas fa-sync-alt"></i>
                                 </a>
                             </div>

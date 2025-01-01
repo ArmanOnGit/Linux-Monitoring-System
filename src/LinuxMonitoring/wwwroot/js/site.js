@@ -30,3 +30,57 @@ $(document).ready(function () {
 
     fetchSystemInfo();
 });
+
+$(document).ready(function () {
+    function fetchSystemTime() {
+        $.ajax({
+            url: '/Monitoring/GetSystemTime', 
+            type: 'GET',                     
+            success: function (response) {
+                if (response.success) {
+                    $('#timeList').empty();
+                    response.systemTime.forEach((time, index) => {
+                        $('#timeList').append(`<li>${time}</li>`);
+                        if (index === 0) $('#timeList').append('<br><br>');
+                    });
+                } else {
+                    $('#timeList').html(`<li>Error: ${response.error}</li>`);
+                }
+            },
+            error: function () {
+                $('#timeList').html('<li>An error occurred while fetching system time.</li>');
+            }
+        });
+    }
+
+    $('#refreshTimeButton').click(fetchSystemTime);
+
+    fetchSystemTime();
+});
+
+$(document).ready(function () {
+    function fetchSystemUptime() {
+        $.ajax({
+            url: '/Monitoring/GetSystemUptime', 
+            type: 'GET',            
+            success: function (response) {
+                if (response.success) {
+                    $('#uptimeList').empty();
+                    response.systemUptime.forEach((uptime, index) => {
+                        $('#uptimeList').append(`<li>${uptime}</li>`);
+                        if (index === 0) $('#uptimeList').append('<br><br>');
+                    });
+                } else {
+                    $('#uptimeList').html(`<li>Error: ${response.error}</li>`);
+                }
+            },
+            error: function () {
+                $('#uptimeList').html('<li>An error occurred while fetching system uptime.</li>');
+            }
+        });
+    }
+
+    $('#refreshUptimeButton').click(fetchSystemUptime);
+
+    fetchSystemUptime();
+});

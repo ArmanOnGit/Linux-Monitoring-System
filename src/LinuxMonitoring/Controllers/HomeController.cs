@@ -30,12 +30,12 @@ public class HomeController : Controller
         //var Sysinfo = _monitorService.RunScript("/app/scripts/General/SystemInfo.sh");
         //string [] SysinfoD = Sysinfo.Split('&');
         //ViewData["Sysinfo"] = SysinfoD;
-        var Uptime = _monitorService.RunScript("/app/scripts/General/Uptime.sh");
-        string[] SystemUptimeD = Uptime.Split("&");
-        ViewData["Uptime"] = SystemUptimeD;
-        var SystemTime = _monitorService.RunScript("/app/scripts/General/Time.sh");
-        string [] SystemTimeD = SystemTime.Split('&');
-        ViewData["SystemTime"] = SystemTimeD;
+        //var Uptime = _monitorService.RunScript("/app/scripts/General/Uptime.sh");
+        //string[] SystemUptimeD = Uptime.Split("&");
+        //ViewData["Uptime"] = SystemUptimeD;
+        //var SystemTime = _monitorService.RunScript("/app/scripts/General/Time.sh");
+        //string [] SystemTimeD = SystemTime.Split('&');
+        //ViewData["SystemTime"] = SystemTimeD;
         return View();
     }
 
@@ -45,11 +45,9 @@ public class HomeController : Controller
     {
         try
         {
-            // Run the script and process the output
             var sysinfo = _monitorService.RunScript("/app/scripts/General/SystemInfo.sh");
             string[] sysinfoDetails = sysinfo.Split('&');
 
-            // Return JSON response
             return Json(new
             {
                 success = true,
@@ -58,7 +56,30 @@ public class HomeController : Controller
         }
         catch (Exception ex)
         {
-            // Handle errors
+            return Json(new
+            {
+                success = false,
+                error = ex.Message
+            });
+        }
+    }
+
+    [HttpGet("Monitoring/GetSystemUptime")]
+    public IActionResult GetSystemUptime()
+    {
+        try
+        {
+            var uptime = _monitorService.RunScript("/app/scripts/General/Uptime.sh");
+            string[] systemUptimeDetails = uptime.Split("&");
+
+            return Json(new
+            {
+                success = true,
+                systemUptime = systemUptimeDetails
+            });
+        }
+        catch (Exception ex)
+        {
             return Json(new
             {
                 success = false,
