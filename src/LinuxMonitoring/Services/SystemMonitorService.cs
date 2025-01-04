@@ -12,7 +12,7 @@ public class SystemMonitorService
         process.StartInfo.CreateNoWindow = true;
         process.Start();
         string output = process.StandardOutput.ReadToEnd();
-        process.WaitForExit();
+        process.WaitForExit();`
         return output;
     }
 }

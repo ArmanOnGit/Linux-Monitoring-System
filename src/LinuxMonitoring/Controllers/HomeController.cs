@@ -168,4 +168,31 @@ public class HomeController : Controller
         }
     }
 
+    [HttpGet("Monitoring/GetCpuData")]
+    public IActionResult GetCpuData()
+    {
+        try
+        {
+            var cpuData = _monitorService.RunScript("/app/scripts/Cpu/CPU.sh");
+            var cpuDetailData = _monitorService.RunScript("/app/scripts/Cpu/CpuDetail.sh");
+            string[] cpuDetails = cpuDetailData.Split('-');
+
+            return Json(new
+            {
+                success = true,
+                cpuData = cpuData,
+                cpuDetailData = cpuDetails
+            });
+        }
+        catch (Exception ex)
+        {
+            return Json(new
+            {
+                success = false,
+                error = ex.Message
+            });
+        }
+    }
+
 }
+

@@ -125,17 +125,11 @@
             <div class="col-md-3">
                 <div class="Cpu-panel custom-panel">
                     <h5 class="title"><i class="fas fa-database"></i> CPU</h5>
-                    <div class="title-space">
-                        <ul>
-                            <li>@Cpu</li>
-                            <br>
-                            @foreach (string Detail in CpuDetail)
-                            {
-                                <li>@Detail</li>
-                            }
+                    <div class="cpu-space">
+                        <ul id="cpuList">
                         </ul>
                     </div>
-                    <a href="#" class="btn-refresh mt-3" onclick="location.reload();">
+                    <a href="#" class="btn-refresh mt-3" id="refreshCpuButton">
                         <i class="fas fa-sync-alt"></i>
                     </a>
                 </div>
