@@ -13,7 +13,6 @@ public class SystemMonitorService
         process.Start();
         string output = process.StandardOutput.ReadToEnd();
         process.WaitForExit();
-
         return output;
     }
 }
