@@ -16,12 +16,6 @@ public class HomeController : Controller
         string[] CpuD = CpuDetail.Split('-');
         ViewData["CpuData"] = Cpu;
         ViewData["CpuDetailData"] = CpuD;
-        var Mem = _monitorService.RunScript("/app/scripts/Memory/UsingMem.sh");
-        //ViewData["MemoryData"] = Mem;
-        //var CachedMem = _monitorService.RunScript("/app/scripts/Memory/CachedMem.sh");
-        //ViewData["CacheData"] = CachedMem;
-        //var SwapMem = _monitorService.RunScript("/app/scripts/Memory/SwapMem.sh");
-        //ViewData["SwapData"] = SwapMem;
         var disk = _monitorService.RunScript("/app/scripts/Disk/wholeDisk.sh");
         ViewData["DiskData"] = disk;
         return View();
@@ -82,11 +76,9 @@ public class HomeController : Controller
     {
         try
         {
-            // Run the Time script and process the output
             var systemTime = _monitorService.RunScript("/app/scripts/General/Time.sh");
             string[] systemTimeDetails = systemTime.Split("&");
 
-            // Return the data as JSON
             return Json(new
             {
                 success = true,
@@ -95,7 +87,6 @@ public class HomeController : Controller
         }
         catch (Exception ex)
         {
-            // Return an error message if something goes wrong
             return Json(new
             {
                 success = false,
