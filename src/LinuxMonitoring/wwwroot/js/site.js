@@ -128,13 +128,13 @@ $(document).ready(function () {
                     $('#diskList').append(`<li>${diskData[0]}</li><br><br>`);
 
                     let diskDetails = diskData[1].split('|-');
-                    $('#diskList').append('<li class="DiskPanel"><br><br><br>');
+                    $('#diskList').append('<li class="DiskPanel"> <br><br><br>');
                     diskDetails.forEach((item, index) => {
                         if (index !== 0) {
-                            $('#diskList').append(`${item}<br>`);
+                            $('#diskList li:last').append(`${item}<br>`);
                         }
                     });
-                    $('#diskList').append('</li>');
+                    $('#diskList').append('</li>');                    
                 } else {
                     $('#diskList').html(`<li>Error: ${response.error}</li>`);
                 }
