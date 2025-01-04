@@ -115,3 +115,39 @@ $(document).ready(function () {
 
     fetchNetworkData();
 });
+
+$(document).ready(function () {
+    function fetchDiskData() {
+        $.ajax({
+            url: '/Monitoring/GetDiskData',
+            type: 'GET',
+            success: function (response) {
+                if (response.success) {
+                    $('#diskList').empty();
+                    let diskData = response.diskData.split('*');
+                    $('#diskList').append(`<li>${diskData[0]}</li><br><br>`);
+
+                    let diskDetails = diskData[1].split('|-');
+                    $('#diskList').append('<li class="DiskPanel"><br><br><br>');
+                    diskDetails.forEach((item, index) => {
+                        if (index !== 0) {
+                            $('#diskList').append(`${item}<br>`);
+                        }
+                    });
+                    $('#diskList').append('</li>');
+                } else {
+                    $('#diskList').html(`<li>Error: ${response.error}</li>`);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                let errorMessage = `An error occurred: ${textStatus} - ${errorThrown}`;
+                $('#diskList').html(`<li>${errorMessage}</li>`);
+            }
+        });
+    }
+
+    $('#refreshDiskButton').click(fetchDiskData);
+
+    fetchDiskData();
+});
+

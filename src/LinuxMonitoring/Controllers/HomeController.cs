@@ -24,9 +24,6 @@ public class HomeController : Controller
         ViewData["SwapData"] = SwapMem;
         var disk = _monitorService.RunScript("/app/scripts/Disk/wholeDisk.sh");
         ViewData["DiskData"] = disk;
-        var Network = _monitorService.RunScript("/app/scripts/Network/network_monitor.sh");
-        string[] NetworkD = Network.Split('*');
-        ViewData["NetworkData"] = NetworkD;
         return View();
     }
 
@@ -80,6 +77,33 @@ public class HomeController : Controller
         }
     }
 
+    [HttpGet("Monitoring/GetSystemTime")]
+    public IActionResult GetSystemTime()
+    {
+        try
+        {
+            // Run the Time script and process the output
+            var systemTime = _monitorService.RunScript("/app/scripts/General/Time.sh");
+            string[] systemTimeDetails = systemTime.Split("&");
+
+            // Return the data as JSON
+            return Json(new
+            {
+                success = true,
+                systemTime = systemTimeDetails
+            });
+        }
+        catch (Exception ex)
+        {
+            // Return an error message if something goes wrong
+            return Json(new
+            {
+                success = false,
+                error = ex.Message
+            });
+        }
+    }
+
     [HttpGet("Monitoring/GetNetworkData")]
     public IActionResult GetNetworkData()
     {
@@ -102,5 +126,28 @@ public class HomeController : Controller
             });
         }
     }
+
+    [HttpGet("Monitoring/GetDiskData")]
+    public IActionResult GetDiskData()
+    {
+        try
+        {
+            var diskData = _monitorService.RunScript("/app/scripts/Disk/wholeDisk.sh");
+            return Json(new
+            {
+                success = true,
+                diskData = diskData
+            });
+        }
+        catch (Exception ex)
+        {
+            return Json(new
+            {
+                success = false,
+                error = ex.Message
+            });
+        }
+    }
+
 
 }

@@ -5,7 +5,7 @@
     var CachedData = ViewData["CacheData"] as string;
     var SwapData = ViewData["SwapData"] as string;
     var DiskData = ViewData["DiskData"] as string;
-    var Network = ViewData["NetworkData"] as Array;
+    // var Network = ViewData["NetworkData"] as Array;
     // var SystemData = ViewData["Sysinfo"] as Array;
     // var SystemTime = ViewData["SystemTime"] as Array;
     // var SystemUptime = ViewData["Uptime"] as Array;
@@ -83,34 +83,10 @@
                     <div class="col-md-4">
                         <div class="custom-panel">
                             <h5 class="title"><i class="fas fa-database"></i> DISK</h5>
-                            <div class="title-space">
-                                @{
-                                    string[] DiskD = DiskData.Split("*");
-                                    <ul>
-                                        <li>@DiskD[0]</li>
-                                        <br />
-                                        <br />
-                                        @{
-                                            string DiskDetails = DiskD[1];
-                                            string[] details2 = DiskDetails.Split("|-");
-                                            int count = 0;
-                                            <li class="DiskPanel">
-                                                <br>
-                                                <br>
-                                                <br>
-                                                @foreach (string item2 in details2)
-                                                {
-                                                    if (count != 0)
-                                                    {
-                                                        @item2
-                                                        <br>
-                                                    }
-                                                    count++;
-                                                }
-                                            </li>
-                                        }
+                            <div class="disk-space">
+                                <ul id="diskList">
+
                                     </ul>
-                                }
                             </div>
                             <a href="#" class="btn-refresh" onclick="location.reload();">
                                 <i class="fas fa-sync-alt"></i>
