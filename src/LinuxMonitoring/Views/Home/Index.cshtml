@@ -2,13 +2,13 @@
     var Cpu = ViewData["CpuData"] as string;
     var CpuDetail = ViewData["CpuDetailData"] as Array;
     var MemData = ViewData["MemoryData"] as string;
-    var CachedData= ViewData["CacheData"] as string;
+    var CachedData = ViewData["CacheData"] as string;
     var SwapData = ViewData["SwapData"] as string;
     var DiskData = ViewData["DiskData"] as string;
     var Network = ViewData["NetworkData"] as Array;
     // var SystemData = ViewData["Sysinfo"] as Array;
-    var SystemTime = ViewData["SystemTime"] as Array;
-    var SystemUptime = ViewData["Uptime"] as Array;
+    // var SystemTime = ViewData["SystemTime"] as Array;
+    // var SystemUptime = ViewData["Uptime"] as Array;
 }
 @{
     Layout =
@@ -42,7 +42,6 @@
                                 <h5 class="title"><i class="fas fa-database"></i>System Information</h5>
                                 <div class="title-space">
                                     <ul id="systemInfoList">
-
                                     </ul>
                                 </div>
                                 <a href="#" class="btn-refresh" id="SysInfo-refresh">
@@ -56,7 +55,6 @@
                                 <h5 class="title"><i class="fas fa-database"></i>System Time</h5>
                                 <div class="title-space">
                                     <ul id="timeList">
-                                       
                                     </ul>
                                 </div>
                                 <a href="#" class="btn-refresh" id="refreshTimeButton">
@@ -70,7 +68,6 @@
                                 <h5 class="title"><i class="fas fa-database"></i>System Activity</h5>
                                 <div class="title-space">
                                     <ul id="uptimeList">
-                                            
                                     </ul>
                                 </div>
                                 <a href="#" class="btn-refresh" id="refreshUptimeButton">
@@ -140,25 +137,11 @@
                     <div class="col-md-4">
                         <div class="custom-panel">
                             <h5 class="title"><i class="fas fa-database"></i> Network</h5>
-                            <div class="title-space">
-                                <ul>
-                                    <li>Interfaces bandwidth usage:</li>
-                                    <br />
-                                    <br />
-                                    @{
-                                        int counter = 0;
-                                        foreach (string interfaces in Network)
-                                        {
-                                            if (counter != 0)
-                                            {
-                                                <li>@interfaces</li>
-                                            }
-                                            counter++;
-                                        }
-                                    }
+                            <div class="title-space network-space">
+                                <ul id="networkList">
                                 </ul>
                             </div>
-                            <a href="#" class="btn-refresh" onclick="location.reload();">
+                            <a href="#" class="btn-refresh" id="refreshNetworkButton">
                                 <i class="fas fa-sync-alt"></i>
                             </a>
                         </div>
@@ -176,7 +159,7 @@
                             <br>
                             @foreach (string Detail in CpuDetail)
                             {
-                               <li>@Detail</li>
+                                <li>@Detail</li>
                             }
                         </ul>
                     </div>

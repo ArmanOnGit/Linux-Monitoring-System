@@ -8,10 +8,10 @@ $(document).ready(function () {
     function fetchSystemInfo() {
         $.ajax({
             url: '/Monitoring/GetSystemInfo',
-            type: 'GET',                  
+            type: 'GET',
             success: function (response) {
                 if (response.success) {
-                        $('#systemInfoList').empty();
+                    $('#systemInfoList').empty();
                     response.systemInfo.forEach((info, index) => {
                         $('#systemInfoList').append(`<li>${info}</li>`);
                         if (index === 0) $('#systemInfoList').append('<br><br>');
@@ -34,8 +34,8 @@ $(document).ready(function () {
 $(document).ready(function () {
     function fetchSystemTime() {
         $.ajax({
-            url: '/Monitoring/GetSystemTime', 
-            type: 'GET',                     
+            url: '/Monitoring/GetSystemTime',
+            type: 'GET',
             success: function (response) {
                 if (response.success) {
                     $('#timeList').empty();
@@ -61,8 +61,8 @@ $(document).ready(function () {
 $(document).ready(function () {
     function fetchSystemUptime() {
         $.ajax({
-            url: '/Monitoring/GetSystemUptime', 
-            type: 'GET',            
+            url: '/Monitoring/GetSystemUptime',
+            type: 'GET',
             success: function (response) {
                 if (response.success) {
                     $('#uptimeList').empty();
@@ -83,4 +83,35 @@ $(document).ready(function () {
     $('#refreshUptimeButton').click(fetchSystemUptime);
 
     fetchSystemUptime();
+});
+
+$(document).ready(function () {
+    function fetchNetworkData() {
+        $.ajax({
+            url: '/Monitoring/GetNetworkData',
+            type: 'GET',
+            success: function (response) {
+                if (response.success) {
+                    $('#networkList').empty();
+                    $('#networkList').append('<li>Interfaces bandwidth usage:</li><br><br>');
+
+                    response.networkData.forEach((data, index) => {
+                        if (index !== 0) {
+                            $('#networkList').append(`<li>${data}</li>`);
+                        }
+                    });
+                } else {
+                    $('#networkList').html(`<li>Error: ${response.error}</li>`);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                let errorMessage = `An error occurred: ${textStatus} - ${errorThrown}`;
+                $('#networkList').html(`<li>${errorMessage}</li>`);
+            }
+        });
+    }
+
+    $('#refreshNetworkButton').click(fetchNetworkData);
+
+    fetchNetworkData();
 });
