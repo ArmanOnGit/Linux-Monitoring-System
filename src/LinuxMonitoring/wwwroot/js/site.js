@@ -159,23 +159,23 @@ $(document).ready(function () {
             type: 'GET',
             success: function (response) {
                 if (response.success) {
-                    $('#memoryList').empty();
+                    $('.memoryList').empty();
 
                     let memoryData = response.memoryData.split('*');
-                    $('#memoryList').append(`<li>${memoryData[0]}</li><br><br>`);
+                    $('.memoryList').append(`<li>${memoryData[0]}</li><br><br>`);
 
                     let cachedMemoryData = response.cachedMemoryData.split('*');
-                    $('#memoryList').append(`<li>${cachedMemoryData[0]}</li><br><br>`);
+                    $('.memoryList').append(`<li>${cachedMemoryData[0]}</li>`);
 
                     let swapMemoryData = response.swapMemoryData.split('*');
-                    $('#memoryList').append(`<li>${swapMemoryData[0]}</li><br><br>`);
+                    $('.memoryList').append(`<li>${swapMemoryData[0]}</li>`);
                 } else {
-                    $('#memoryList').html(`<li>Error: ${response.error}</li>`);
+                    $('.memoryList').html(`<li>Error: ${response.error}</li>`);
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 let errorMessage = `An error occurred: ${textStatus} - ${errorThrown}`;
-                $('#memoryList').html(`<li>${errorMessage}</li>`);
+                $('.memoryList').html(`<li>${errorMessage}</li>`);
             }
         });
     }
