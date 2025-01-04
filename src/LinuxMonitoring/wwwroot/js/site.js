@@ -151,3 +151,37 @@ $(document).ready(function () {
     fetchDiskData();
 });
 
+
+
+$(document).ready(function () {
+    function fetchMemoryData() {
+        $.ajax({
+            url: '/Monitoring/GetMemoryData',
+            type: 'GET',
+            success: function (response) {
+                if (response.success) {
+                    $('#memoryList').empty();
+
+                    let memoryData = response.memoryData.split('*');
+                    $('#memoryList').append(`<li>${memoryData[0]}</li><br><br>`);
+
+                    let cachedMemoryData = response.cachedMemoryData.split('*');
+                    $('#memoryList').append(`<li>${cachedMemoryData[0]}</li><br><br>`);
+
+                    let swapMemoryData = response.swapMemoryData.split('*');
+                    $('#memoryList').append(`<li>${swapMemoryData[0]}</li><br><br>`);
+                } else {
+                    $('#memoryList').html(`<li>Error: ${response.error}</li>`);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                let errorMessage = `An error occurred: ${textStatus} - ${errorThrown}`;
+                $('#memoryList').html(`<li>${errorMessage}</li>`);
+            }
+        });
+    }
+
+    $('#refreshMemoryButton').click(fetchMemoryData);
+
+    fetchMemoryData();
+});

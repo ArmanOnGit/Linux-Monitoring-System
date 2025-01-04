@@ -150,4 +150,31 @@ public class HomeController : Controller
     }
 
 
+    [HttpGet("Monitoring/GetMemoryData")]
+    public IActionResult GetMemoryData()
+    {
+        try
+        {
+            var memoryData = _monitorService.RunScript("/app/scripts/Memory/UsingMem.sh");
+            var cachedMemoryData = _monitorService.RunScript("/app/scripts/Memory/CachedMem.sh");
+            var swapMemoryData = _monitorService.RunScript("/app/scripts/Memory/SwapMem.sh");
+
+            return Json(new
+            {
+                success = true,
+                memoryData = memoryData,
+                cachedMemoryData = cachedMemoryData,
+                swapMemoryData = swapMemoryData
+            });
+        }
+        catch (Exception ex)
+        {
+            return Json(new
+            {
+                success = false,
+                error = ex.Message
+            });
+        }
+    }
+
 }
