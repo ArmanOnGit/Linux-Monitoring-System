@@ -184,3 +184,35 @@ $(document).ready(function () {
 
     fetchMemoryData();
 });
+
+
+$(document).ready(function () {
+    function fetchCpuData() {
+        $.ajax({
+            url: '/Monitoring/GetCpuData',
+            type: 'GET',
+            success: function (response) {
+                if (response.success) {
+                    $('#cpuList').empty();
+
+                    let cpuData = response.cpuData;
+                    $('#cpuList').append(`<li>${cpuData}</li><br><br>`);
+
+                    response.cpuDetailData.forEach((data, index) => {
+                        $('#cpuList').append(`<li>${data}</li>`);
+                    });
+                } else {
+                    $('#cpuList').html(`<li>Error: ${response.error}</li>`);
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                let errorMessage = `An error occurred: ${textStatus} - ${errorThrown}`;
+                $('#cpuList').html(`<li>${errorMessage}</li>`);
+            }
+        });
+    }
+
+    $('#refreshCpuButton').click(fetchCpuData);
+
+    fetchCpuData();
+});

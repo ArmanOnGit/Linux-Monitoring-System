@@ -2,6 +2,7 @@
     
 # Loop through all CPU cores to get their frequencies
 i=0
+cpucoreCount=$(ls /sys/devices/system/cpu/ | grep cpu[0-9] | wc -l)
 for cpu in /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq; do
     # Get current frequency
     cpuFreq=$(cat $cpu)
@@ -18,7 +19,8 @@ for cpu in /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq; do
     showingNum=$(($coreNum+1))
     echo "Core $showingNum : $cpuFreqMHz MHz of $maxFreqMHz MHz"
 
-    if [[ $i -lt 11 ]]; then
+
+    if [[ $i -lt $cpucoreCount-1 ]]; then
         echo "-"
     fi
 

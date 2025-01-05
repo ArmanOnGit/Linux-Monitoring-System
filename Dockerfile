@@ -24,7 +24,7 @@ FROM ubuntu:latest AS runtime
 ENV TZ=Asia/Tehran
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     && apt-get update && apt-get install -y --no-install-recommends \
-    zlib1g aspnetcore-runtime-8.0 dotnet-runtime-8.0 sysstat bc \
+    dos2unix zlib1g aspnetcore-runtime-8.0 dotnet-runtime-8.0 sysstat bc \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
@@ -33,6 +33,12 @@ WORKDIR /app
 # Copy scripts and static files
 COPY ./scripts/ ./scripts/
 COPY ./src/LinuxMonitoring/wwwroot /app/wwwroot
+
+RUN dos2unix ./scripts/Cpu/* \
+    ./scripts/Disk/* \
+    ./scripts/General/* \
+    ./scripts/Memory/* \
+    ./scripts/Network/*
 
 # Copy build output from build stage
 COPY --from=build /app/build /app
