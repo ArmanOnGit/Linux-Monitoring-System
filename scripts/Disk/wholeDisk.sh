@@ -17,4 +17,15 @@ function nvmeDisks()
 
 }
 
-nvmeDisks
+
+sdDisks() {
+    echo "SCSI | SATA Disks: *"
+    lsblk -o TYPE,NAME,SIZE | grep disk | sed 's/^/ |-/g'
+}
+
+
+if [[ "`lsblk | grep disk | awk 'NR==1 {print $1}'`" == "nvme0n1" ]]; then
+    nvmeDisks
+else
+    sdDisks
+fi
