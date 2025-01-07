@@ -7,10 +7,10 @@ The Linux Monitoring System is a web-based monitoring solution designed for serv
 ## Key Features
 
 - Real-Time Monitoring: Displays up-to-date information about server resources, including:
-  1. CPU Usage
-  2. Disk Space and Usage
-  3. Memory Utilization
-  4. General System Information (e.g., uptime, OS version)
+  - CPU Usage
+  - Disk Space and Usage
+  - Memory Utilization
+  - General System Information (e.g., uptime, OS version)
 - User-Friendly Web Interface: A clean and organized panel to visualize critical server data.
 - Dockerized Deployment: Simplifies setup and ensures consistent behavior across different environments.
 
@@ -44,10 +44,10 @@ The Linux Monitoring System is a web-based monitoring solution designed for serv
    ```
 4. Run the Docker Container:
    ```bash
-   docker run -d -p 8080:8080 linux-monitoring-system
+   docker run -d -p 5130:5130 linux-monitoring-system
    ```
 5. Access the Application:
-   Open your web browser and go to `http://localhost:8080`.
+   Open your web browser and go to `http://localhost:5130`.
 
 ## Future Improvements
 
@@ -64,6 +64,8 @@ The Linux Monitoring System is a web-based monitoring solution designed for serv
 ## Feedback and Contributions
 
 We welcome contributions and feedback to improve this project. Feel free to open an issue or submit a pull request on our [GitHub repository](https://github.com/ArmanOnGit/Linux-Monitoring-System).
+
+## Website Preview
 
 ![Site-Preview](https://github.com/user-attachments/assets/083e162e-fa57-4e3c-ad0f-8b10bbb9957e)
 
