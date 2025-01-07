@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XPXwBrECawmc8ZGdw2wsSoDW/QflJUcZI4SPsoDboOQf38b5m6XJgfVK1+DF4RjSW7cTqtVF2Sp/2qmE2zcVag==",
+  "dgSpecHash": "UWubzs3UciU=",
   "success": true,
-  "projectFilePath": "/opt/Linux-Monitoring-System/src/LinuxMonitoring/LinuxMonitoring.csproj",
+  "projectFilePath": "C:\\Users\\Ata\\source\\repos\\LinuxMonitoringSystem\\src\\LinuxMonitoring\\LinuxMonitoring.csproj",
   "expectedPackageFiles": [
-    "/root/.nuget/packages/microsoft.visualstudio.azure.containers.tools.targets/1.21.0/microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512"
+    "C:\\Users\\Ata\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512"
   ],
   "logs": []
 }

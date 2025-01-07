@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LinuxMonitoring")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b572d3f3edbdb2268468eeade9897cc515e1b350")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e86a857cf7470a9f5d9eac88741cc960674c2bb6")]
 [assembly: System.Reflection.AssemblyProductAttribute("LinuxMonitoring")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LinuxMonitoring")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
