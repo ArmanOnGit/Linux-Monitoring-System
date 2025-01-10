@@ -99,32 +99,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Ata\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/root/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ata\\source\\repos\\LinuxMonitoringSystem\\src\\LinuxMonitoring\\LinuxMonitoring.csproj",
+      "projectUniqueName": "/opt/Linux-Monitoring-System/src/LinuxMonitoring/LinuxMonitoring.csproj",
       "projectName": "LinuxMonitoring",
-      "projectPath": "C:\\Users\\Ata\\source\\repos\\LinuxMonitoringSystem\\src\\LinuxMonitoring\\LinuxMonitoring.csproj",
-      "packagesPath": "C:\\Users\\Ata\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ata\\source\\repos\\LinuxMonitoringSystem\\src\\LinuxMonitoring\\obj\\",
+      "projectPath": "/opt/Linux-Monitoring-System/src/LinuxMonitoring/LinuxMonitoring.csproj",
+      "packagesPath": "/root/.nuget/packages/",
+      "outputPath": "/opt/Linux-Monitoring-System/src/LinuxMonitoring/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Ata\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/root/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -137,11 +129,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -172,7 +159,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
